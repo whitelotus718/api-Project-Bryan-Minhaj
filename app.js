@@ -6,6 +6,8 @@ const tweetsRouter = require(`./routes/tweets`);
 const app = express();
 const jsonify = express.json();
 
+const asyncHandler = (handler) => (req, res, next) => handler(req, res, next).catch(next);
+
 app.use(morgan("dev"));
 app.use(jsonify);
 app.use(`/`, indexRouter); //Potentially add routes folder
@@ -31,4 +33,6 @@ app.use((err, req, res, next) => {
   });
 });
 
+
 module.exports = app;
+// module.exports = asyncHandler;
