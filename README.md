@@ -1,1 +1,2 @@
-# api-Project-Bryan-Minhaj
+# Express Sequelize Starter
+
