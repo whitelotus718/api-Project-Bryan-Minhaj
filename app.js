@@ -30,6 +30,7 @@ app.use((err, req, res, next) => {
     title: err.title || "Server Error",
     message: err.message,
     stack: isProduction ? null : err.stack,
+    errors: err.errors,
   });
 });
 
